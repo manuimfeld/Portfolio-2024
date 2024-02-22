@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import NavbarMobile from "./navbarMobile";
+import NavbarMenuMobile from "./navbarMenuMobile";
 
 export default function Navbar() {
   const [menuState, setIsOpen] = useState(false);
@@ -11,7 +11,8 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="sticky top-0 w-screen h-16 flex py-2 bg-white text-[#9D72AF] items-center">
+      <div className="sticky top-0 w-screen h-16 flex flex-start px-5 py-2 bg-white text-[#9D72AF] items-center">
+        <h3 className="text-center text-xl font-bold mr-auto">Soy Moonática</h3>
         <button
           className="pl-5 block lg:hidden focus:outline-none"
           onClick={toggleMenu}
@@ -28,9 +29,8 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        <h3 className="text-center text-xl font-bold mx-auto">Soy Moonática</h3>
       </div>
-      {menuState ? <NavbarMobile toggleMenu={toggleMenu} /> : null}
+      {menuState ? <NavbarMenuMobile toggleMenu={toggleMenu} /> : null}
     </>
   );
 }
