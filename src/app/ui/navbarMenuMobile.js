@@ -11,7 +11,7 @@ export default function NavbarMobile({ toggleMenu }) {
   };
 
   return (
-    <div className="items-start sticky flex flex-col top-16 w-vw px-5 pt-4 bg-[#F9E9F2] text-[#9D72AF] h-[calc(100vh_-_64px)]">
+    <div className="z-10 items-start sticky flex flex-col top-16 w-vw px-5 pt-4 bg-[#F9E9F2] text-[#9D72AF] h-[calc(100vh_-_64px)]">
       <Link onClick={toggleMenu} href="/" className="mb-4">
         <Image
           src="/icons-menu/home.svg"
