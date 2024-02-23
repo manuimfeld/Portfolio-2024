@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="sticky top-0 w-screen h-16 flex flex-start px-5 py-2 bg-white text-[#9D72AF] items-center">
+      <div className="z-10 sticky top-0 w-screen h-16 flex flex-start px-5 py-2 bg-white text-[#9D72AF] items-center">
         <h3 className="text-center text-xl font-bold mr-auto">Soy Moonática</h3>
         <button
           className="pl-5 block lg:hidden focus:outline-none"

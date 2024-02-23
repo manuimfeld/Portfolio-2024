@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -11,13 +10,14 @@ export default function NavbarMobile({ toggleMenu }) {
   };
 
   return (
-    <div className="z-10 items-start sticky flex flex-col top-16 w-vw px-5 pt-4 bg-[#F9E9F2] text-[#9D72AF] h-[calc(100vh_-_64px)]">
+    <div className="z-10 items-start w-screen fixed flex flex-col top-16 w-vw px-5 pt-4 bg-[#F9E9F2] text-[#9D72AF] h-[calc(100vh_-_64px)]">
       <Link onClick={toggleMenu} href="/" className="mb-4">
         <Image
           src="/icons-menu/home.svg"
           width="24"
           height="24"
           className="inline-block mr-1"
+          alt="Ícono de una casa"
         />
         Inicio
       </Link>
@@ -31,6 +31,7 @@ export default function NavbarMobile({ toggleMenu }) {
           width="24"
           height="24"
           className="inline-block mr-1"
+          alt="Ícono de una bola de cristal"
         />
         Servicios
         {servicesOpen ? (
@@ -39,6 +40,7 @@ export default function NavbarMobile({ toggleMenu }) {
             width="24"
             height="24"
             className="inline-block"
+            alt="Ícono de una flecha apuntando hacia abajo"
           />
         ) : null}
       </button>
@@ -54,6 +56,7 @@ export default function NavbarMobile({ toggleMenu }) {
               width="14"
               height="14"
               className="inline-block mr-1"
+              alt="Ícono de una estrella"
             />
             Lectura de Carta Natal
           </Link>
@@ -67,6 +70,7 @@ export default function NavbarMobile({ toggleMenu }) {
               width="14"
               height="14"
               className="inline-block mr-1"
+              alt="Ícono de una estrella"
             />
             Tarot evolutivo
           </Link>
@@ -80,6 +84,7 @@ export default function NavbarMobile({ toggleMenu }) {
               width="14"
               height="14"
               className="inline-block mr-1"
+              alt="Ícono de una estrella"
             />
             Revolución solar
           </Link>
@@ -91,6 +96,7 @@ export default function NavbarMobile({ toggleMenu }) {
           width="24"
           height="24"
           className="inline-block mr-1"
+          alt="Ícono de una persona"
         />
         Quien soy
       </Link>
@@ -100,6 +106,7 @@ export default function NavbarMobile({ toggleMenu }) {
           width="24"
           height="24"
           className="inline-block mr-1"
+          alt="Ícono de mensajes"
         />
         Contacto
       </Link>
