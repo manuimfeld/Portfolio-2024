@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
-export default function NavbarMobile({ toggleMenu }) {
+export default function NavbarMobile({ menuState, toggleMenu }) {
   const [servicesOpen, setOpenServices] = useState(false);
 
   const toggleServices = () => {
@@ -10,13 +10,21 @@ export default function NavbarMobile({ toggleMenu }) {
   };
 
   return (
-    <div className="z-10 items-start w-screen fixed flex flex-col top-16 w-vw px-5 pt-4 bg-[#F9E9F2] text-[#9D72AF] h-[calc(100vh_-_64px)]">
-      <Link onClick={toggleMenu} href="/" className="mb-4">
+    <div
+      className={`z-10 w-screen md:max-w-max md:flex flex-col md:justify-center md:items-center  md:flex-row bg-[#F9E9F2] md:bg-transparent text-[#9D72AF] md:h-12 ${
+        menuState ? 'items-start h-[calc(100vh_-_64px)] fixed top-16 pt-4' : ''
+      }`}
+    >
+      <Link
+        onClick={toggleMenu}
+        href="/"
+        className="mb-4 md:mb-0 md:mr-4 h-fit"
+      >
         <Image
           src="/icons-menu/home.svg"
           width="24"
           height="24"
-          className="inline-block mr-1"
+          className="inline-block mr-1 "
           alt="Ícono de una casa"
         />
         Inicio
@@ -24,7 +32,9 @@ export default function NavbarMobile({ toggleMenu }) {
 
       <button
         onClick={toggleServices}
-        className={`${servicesOpen ? "mb-2 font-bold" : "mb-4"} inline-block`}
+        className={`${
+          servicesOpen ? 'mb-2 font-bold' : ''
+        } inline-block h-fit md:mr-4`}
       >
         <Image
           src="/icons-menu/crystal-ball.svg"
@@ -39,7 +49,7 @@ export default function NavbarMobile({ toggleMenu }) {
             src="/icons-menu/arrow-narrow-down.svg"
             width="24"
             height="24"
-            className="inline-block"
+            className="inline-block "
             alt="Ícono de una flecha apuntando hacia abajo"
           />
         ) : null}
@@ -90,22 +100,26 @@ export default function NavbarMobile({ toggleMenu }) {
           </Link>
         </>
       ) : null}
-      <Link onClick={toggleMenu} href="/servicios/carta-natal" className="mb-4">
+      <Link
+        onClick={toggleMenu}
+        href="/servicios/carta-natal"
+        className="h-fit md:mr-4"
+      >
         <Image
           src="/icons-menu/user.svg"
           width="24"
           height="24"
-          className="inline-block mr-1"
+          className="inline-block mr-1 "
           alt="Ícono de una persona"
         />
         Quien soy
       </Link>
-      <Link onClick={toggleMenu} href="/" className="mb-4">
+      <Link onClick={toggleMenu} href="/" className="">
         <Image
           src="/icons-menu/messages.svg"
           width="24"
           height="24"
-          className="inline-block mr-1"
+          className="inline-block mr-1 h-fit"
           alt="Ícono de mensajes"
         />
         Contacto
