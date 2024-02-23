@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import AboutMe from "./ui/aboutMe";
-import Services from "./ui/services";
+import Image from 'next/image';
+import Link from 'next/link';
+import AboutMe from './ui/aboutMe';
+import Services from './ui/services';
 
 export default function Home() {
   return (
@@ -18,8 +18,8 @@ export default function Home() {
           Transforma tu vida explorando tu esencia
         </h3>
       </main>
-      <AboutMe />
-      <Services />
+      {/* <AboutMe />
+      <Services /> */}
     </>
   );
 }
