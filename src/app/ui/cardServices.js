@@ -4,13 +4,13 @@ import Link from "next/link";
 export default function CardServices({ service }) {
   return (
     <article
-      className={`flex-none w-[80vw] md:w-[30vw] mx-5  bg-[#2d5cbbab] px-5 py-2 rounded-[25px]`}
+      className={`flex-none w-[80vw] md:w-1/4 mx-auto my-6 bg-[#2d5cbbab] px-5 py-2 rounded-[25px]`}
     >
       <Image
         src={`${service.img_url}`}
         alt={service.alt_text}
-        width={300}
-        height={300}
+        width={200}
+        height={200}
         className="mx-auto"
       />
       <div className=" py-4">
