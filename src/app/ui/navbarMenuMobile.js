@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function NavbarMobile({ menuState, toggleMenu }) {
   const [servicesOpen, setOpenServices] = useState(false);
@@ -11,20 +11,22 @@ export default function NavbarMobile({ menuState, toggleMenu }) {
 
   return (
     <div
-      className={`z-10 w-full md:max-w-max md:flex flex-col md:justify-center md:items-center  md:flex-row bg-[#F9E9F2] md:bg-transparent text-[#9D72AF] md:h-12 ${
-        menuState ? 'items-start h-[calc(100vh_-_64px)] fixed top-16 pt-4' : ''
+      className={`z-10 w-full pl-5 md:max-w-max md:flex flex-col md:justify-center md:items-center  md:flex-row bg-primaryLighter md:bg-transparent text-[#9D72AF] h-[calc(100vh_-_64px)] md:h-12 ${
+        menuState === true
+          ? "flex md:block items-start h-[calc(100vh_-_64px)] md:h-16 fixed md:static top-16 md:top-0 left-0 md:left-0 pt-4 md:pt-0 bg-black"
+          : "hidden"
       }`}
     >
       <Link
         onClick={toggleMenu}
-        href="/"
+        href="#inicio"
         className="mb-4 md:mb-0 md:mr-4 h-fit"
       >
         <Image
           src="/icons-menu/home.svg"
           width="24"
           height="24"
-          className="inline-block mr-1 "
+          className="inline-block mr-1 md:hidden"
           alt="Ícono de una casa"
         />
         Inicio
@@ -33,14 +35,16 @@ export default function NavbarMobile({ menuState, toggleMenu }) {
       <button
         onClick={toggleServices}
         className={`${
-          servicesOpen ? 'mb-2 font-bold' : ''
-        } inline-block h-fit md:mr-4`}
+          servicesOpen
+            ? "mb-4 md:mb-0 md:mr-4 h-fit font-bold md:font-normal"
+            : ""
+        } mb-4 md:mb-0 md:mr-4 h-fit`}
       >
         <Image
           src="/icons-menu/crystal-ball.svg"
           width="24"
           height="24"
-          className="inline-block mr-1"
+          className="inline-block mr-1 md:hidden"
           alt="Ícono de una bola de cristal"
         />
         Servicios
@@ -49,7 +53,7 @@ export default function NavbarMobile({ menuState, toggleMenu }) {
             src="/icons-menu/arrow-narrow-down.svg"
             width="24"
             height="24"
-            className="inline-block "
+            className="inline-block md:hidden"
             alt="Ícono de una flecha apuntando hacia abajo"
           />
         ) : null}
@@ -58,42 +62,42 @@ export default function NavbarMobile({ menuState, toggleMenu }) {
         <>
           <Link
             href="/servicios/carta-natal"
-            className="pl-4 mb-4"
+            className="pl-4 mb-4 md:pl-0 md:mb-0 md:mr-4"
             onClick={toggleMenu}
           >
             <Image
               src="/icons-menu/star.svg"
               width="14"
               height="14"
-              className="inline-block mr-1"
+              className="inline-block mr-1 md:hidden"
               alt="Ícono de una estrella"
             />
             Lectura de Carta Natal
           </Link>
           <Link
             href="/servicios/tarot-evolutivo"
-            className="pl-4 mb-4"
+            className="pl-4 mb-4 md:pl-0 md:mb-0 md:mr-4"
             onClick={toggleMenu}
           >
             <Image
               src="/icons-menu/star.svg"
               width="14"
               height="14"
-              className="inline-block mr-1"
+              className="inline-block mr-1 md:hidden"
               alt="Ícono de una estrella"
             />
             Tarot evolutivo
           </Link>
           <Link
             href="/servicios/revolucion-solar"
-            className="pl-4 mb-4"
+            className="pl-4 mb-4 md:pl-0 md:mb-0 md:mr-4"
             onClick={toggleMenu}
           >
             <Image
               src="/icons-menu/star.svg"
               width="14"
               height="14"
-              className="inline-block mr-1"
+              className="inline-block mr-1 md:hidden"
               alt="Ícono de una estrella"
             />
             Revolución solar
@@ -102,24 +106,28 @@ export default function NavbarMobile({ menuState, toggleMenu }) {
       ) : null}
       <Link
         onClick={toggleMenu}
-        href="/servicios/carta-natal"
-        className="h-fit md:mr-4"
+        href="#quien-soy"
+        className="mb-4 md:mb-0 md:mr-4 h-fit"
       >
         <Image
           src="/icons-menu/user.svg"
           width="24"
           height="24"
-          className="inline-block mr-1 "
+          className="inline-block mr-1 md:hidden"
           alt="Ícono de una persona"
         />
         Quien soy
       </Link>
-      <Link onClick={toggleMenu} href="/" className="">
+      <Link
+        onClick={toggleMenu}
+        href="#contacto"
+        className="mb-4 md:mb-0 md:mr-4 h-fit"
+      >
         <Image
           src="/icons-menu/messages.svg"
           width="24"
           height="24"
-          className="inline-block mr-1 h-fit"
+          className="inline-block mr-1 h-fit md:hidden"
           alt="Ícono de mensajes"
         />
         Contacto
