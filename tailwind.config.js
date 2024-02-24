@@ -8,6 +8,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        slideOpenMenu: {
+          from: { transform: "translateX(100%)", display: "block" },
+          to: { transform: "translateX(0)" },
+        },
+        slideCloseMenu: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(100%)", display: "none" },
+        },
+      },
+      animation: {
+        openMenu: "slideOpenMenu 150ms ease-out",
+        closeMenu: "slideCloseMenu 150ms ease-out forwards",
+      },
       fontFamily: {
         proxima: ["var(--font-proxima)"],
       },
