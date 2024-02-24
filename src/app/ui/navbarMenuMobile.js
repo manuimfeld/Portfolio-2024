@@ -11,7 +11,7 @@ export default function NavbarMobile({ menuState, toggleMenu }) {
 
   return (
     <div
-      className={`z-10 w-screen md:max-w-max md:flex flex-col md:justify-center md:items-center  md:flex-row bg-[#F9E9F2] md:bg-transparent text-[#9D72AF] md:h-12 ${
+      className={`z-10 w-full md:max-w-max md:flex flex-col md:justify-center md:items-center  md:flex-row bg-[#F9E9F2] md:bg-transparent text-[#9D72AF] md:h-12 ${
         menuState ? 'items-start h-[calc(100vh_-_64px)] fixed top-16 pt-4' : ''
       }`}
     >

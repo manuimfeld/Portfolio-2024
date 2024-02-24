@@ -6,7 +6,7 @@ import Services from './ui/services';
 export default function Home() {
   return (
     <>
-      <main className="text-center flex flex-col justify-center items-center w-screen px-5 h-[calc(100vh_-_64px)]">
+      <main className="text-center flex flex-col justify-center items-center w-full px-5 min-h-[calc(100vh_-_64px)]">
         <Image
           src="/moonatica.png"
           width="350"
@@ -18,8 +18,8 @@ export default function Home() {
           Transforma tu vida explorando tu esencia
         </h3>
       </main>
-      {/* <AboutMe />
-      <Services /> */}
+      <AboutMe />
+      <Services />
     </>
   );
 }
