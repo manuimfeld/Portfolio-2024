@@ -1,8 +1,8 @@
-'use client';
-import { useState } from 'react';
-import NavbarMenuMobile from './navbarMenuMobile';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
+import NavbarMenuMobile from "./navbarMenuMobile";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [menuState, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="z-10 sticky top-0 w-full h-16 flex px-5 py-2 bg-white text-[#9D72AF] items-center justify-between">
+    <div className="z-20 sticky top-0 w-full h-16 flex px-5 py-2 bg-white text-[#9D72AF] items-center justify-between">
       <Link href="/">
         <Image src="/moonatica-hero.svg" width="150" height="32" />
       </Link>
@@ -32,7 +32,7 @@ export default function Navbar() {
           />
         </svg>
       </button>
-      <NavbarMenuMobile />
+      <NavbarMenuMobile menuState={menuState} toggleMenu={toggleMenu} />
     </div>
   );
 }
