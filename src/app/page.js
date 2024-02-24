@@ -1,7 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import AboutMe from "./ui/aboutMe";
-import Services from "./ui/services";
+import Image from 'next/image';
+import Link from 'next/link';
+import AboutMe from './ui/aboutMe';
+import Services from './ui/services';
+import Testimonials from './ui/testimonials';
+import Contact from './ui/contact';
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
       </main>
       <AboutMe />
       <Services />
+      <Testimonials />
+      <Contact />
     </>
   );
 }
