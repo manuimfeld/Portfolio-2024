@@ -1,18 +1,32 @@
 "use client";
-import { useState } from "react";
-import NavbarMenuMobile from "./navbarMenuMobile";
+import { useEffect, useState } from "react";
+import NavbarMenu from "./navbarMenu";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
-  const [menuState, setIsOpen] = useState(false);
+  const [menuState, setIsOpen] = useState(null);
+
+  useEffect(() => {
+    //Si menuState es true, deshabilito el desplazamiento vertical agregando la clase overflow-y-hidden
+    //Si menuState es false, habilito el desplazamiento vertical quitando la clase
+    if (menuState) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+      console.log(document.body.classList);
+    }
+  }, [menuState]);
 
   const toggleMenu = () => {
-    setIsOpen(!menuState);
+    // menuState inicia en null para evitar que la animación se ejecute al entrar a la web
+    // Si menuState es true (menú abierto), lo establece como false para cerrar el menú (closeMenu animation))
+    // Si menuState es false (menú cerrado), lo establece como true para abrir el menú (openMenu animation)
+    setIsOpen(menuState === null ? true : !menuState);
   };
 
   return (
-    <div className="z-20 sticky top-0 w-full h-16 flex px-5 py-2 bg-white text-[#9D72AF] items-center justify-between">
+    <header className="z-20 sticky top-0 w-full h-16 flex px-5 py-2 bg-white text-[#9D72AF] items-center justify-between md:justify-start">
       <Link href="/">
         <Image src="/moonatica-hero.svg" width="150" height="32" />
       </Link>
@@ -32,7 +46,7 @@ export default function Navbar() {
           />
         </svg>
       </button>
-      <NavbarMenuMobile menuState={menuState} toggleMenu={toggleMenu} />
-    </div>
+      <NavbarMenu menuState={menuState} toggleMenu={toggleMenu} />
+    </header>
   );
 }
