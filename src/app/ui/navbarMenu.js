@@ -12,7 +12,7 @@ export default function NavbarMenu({ menuState, toggleMenu }) {
   return (
     <nav
       aria-expanded={menuState}
-      className={`uppercase pl-5 z-10 w-full md:max-w-max md:flex flex-col md:justify-center md:items-center md:flex-row bg-secondary md:bg-transparent text-primary h-[calc(100vh_-_64px)] md:h-12 fixed top-16 left-0 md:static pt-4 md:pt-0  ${
+      className={`uppercase pl-5 z-10 w-full md:max-w-max md:flex flex-col md:justify-center md:items-center md:flex-row bg-[#F5F5F5] md:bg-transparent text-primary h-[calc(100vh_-_64px)] md:h-12 fixed top-16 left-0 md:static pt-4 md:pt-0  ${
         menuState === true
           ? "animate-openMenu flex flex-col items-start"
           : menuState === false
