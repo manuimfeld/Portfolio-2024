@@ -12,15 +12,15 @@ export const SERVICES_ARRAY = [
     title: "Tarot Evolutivo",
     description:
       "Tu forma de sentir, la forma en cómo lo expresas, tu voluntad hacia el mundo, la manera de accionar y pensar, son los principales puntos que vemos en la lectura de la Carta Natal",
-    img_url: "/cart-natal.png",
-    alt_text: "Imágen de una carta de Tarot",
+    img_url: "/rev-solar.png",
+    alt_text: "Imágen de una Carta de Tarot",
   },
   {
     id: 2,
     title: "Revolución Solar",
     description:
       "Tu forma de sentir, la forma en cómo lo expresas, tu voluntad hacia el mundo, la manera de accionar y pensar, son los principales puntos que vemos en la lectura de la Carta Natal",
-    img_url: "/cart-natal.png",
-    alt_text: "Imágen de un sol",
+    img_url: "/rev-solar.png",
+    alt_text: "Imágen del Sol",
   },
 ];

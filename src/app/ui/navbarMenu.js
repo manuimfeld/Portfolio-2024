@@ -35,21 +35,6 @@ export default function NavbarMenu({ menuState, toggleMenu }) {
         Inicio
       </Link>
 
-      <Link
-        onClick={toggleMenu}
-        href="#quien-soy"
-        className="mb-4 md:mb-0 md:mr-4 h-fit"
-      >
-        <Image
-          src="/icons-menu/user.svg"
-          width="24"
-          height="24"
-          className="inline-block mr-1 md:hidden"
-          alt="Ícono de una persona"
-        />
-        Quien soy
-      </Link>
-
       <button
         onClick={toggleServices}
         className={`uppercase ${
@@ -122,6 +107,21 @@ export default function NavbarMenu({ menuState, toggleMenu }) {
           </Link>
         </>
       ) : null}
+
+      <Link
+        onClick={toggleMenu}
+        href="#quien-soy"
+        className="mb-4 md:mb-0 md:mr-4 h-fit"
+      >
+        <Image
+          src="/icons-menu/user.svg"
+          width="24"
+          height="24"
+          className="inline-block mr-1 md:hidden"
+          alt="Ícono de una persona"
+        />
+        Quien soy
+      </Link>
 
       <Link
         onClick={toggleMenu}

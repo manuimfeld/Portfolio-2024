@@ -4,7 +4,9 @@ import Link from "next/link";
 export default function CardServices({ service }) {
   return (
     <article
-      className={`flex-none w-[80vw] md:w-1/4 mx-auto my-6 bg-[#2d5cbbab] px-5 py-2 rounded-[25px]`}
+      className={`flex-none w-[80vw] md:w-1/4 mx-auto ${
+        service.id === 2 ? "mt-6 mb-0" : "my-6"
+      } bg-primaryLighter px-5 py-2 rounded-[25px]`}
     >
       <Image
         src={`${service.img_url}`}
@@ -17,13 +19,13 @@ export default function CardServices({ service }) {
         <h3 className="text-[#BB9AD1] font-bold text-xl mb-2">
           {service.title}
         </h3>
-        <p className="text-gray-300 font-medium text-base">
+        <p className="text-black font-medium text-base">
           {service.description}
         </p>
       </div>
       <div className="px-6 pt-4 pb-2">
         <Link href="/servicios/carta-natal">
-          <button className="inline-block bg-[#BB9AD1] rounded-full px-10 py-2 font-bold text-white mr-2 mb-2">
+          <button className="bg-primary text-white font-semibold py-3 px-8 rounded-full hover:bg-primaryLight hover:text-white transition-colors duration-300">
             Ver más
           </button>
         </Link>
