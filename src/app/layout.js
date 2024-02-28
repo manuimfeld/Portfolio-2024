@@ -41,6 +41,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="bg-gradient-to-b from-[#f9e9f2] to-[#d1eeee]">
+      <meta
+        name="google-site-verification"
+        content="sV9PPeUy2x-aqwbxvLCGhcl5G1avSMGP0p7jQlhfgMs"
+      />
       <body className={proxima.className}>
         <Navbar />
         {children}
